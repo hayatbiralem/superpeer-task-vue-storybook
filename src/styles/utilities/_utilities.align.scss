@@ -1,0 +1,20 @@
+/* ==========================================================================
+   #ALIGN
+   ========================================================================== */
+
+/**
+ * Align utilities.
+ */
+
+$align-directions: (
+  left: left,
+  center: center,
+  right: right,
+  // justify: justify, // We do not need this at the moment
+);
+
+/**
+ * Loop align directions.
+ */
+
+@include loop-collection($align-directions, ".u-text-align-", "text-align");

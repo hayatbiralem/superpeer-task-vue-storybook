@@ -1,0 +1,64 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="Docs/SVGV" />
+
+# SVG What?
+
+React has a great tool to export SVG icons as React Components: [@svgr/cli](https://react-svgr.com/docs/cli/).
+
+You can look at [the training video](https://youtu.be/2W_qXpQJ_Ng?t=583) prepared by [Adem İlter](https://twitter.com/ademilter) to see how it works.
+
+Unfortunately, VueJS does not have a tool like that, yet.
+
+So I decided to make a simple Vue version of it by using pure NodeJS and I made it: SVGV!
+
+## Usage
+
+You can put your new icons into the `public/icons` directory and simply run
+
+```bash
+yarn icon
+```
+
+..to export Icons as Vue Components under the `src/components/icons` directory with index.
+
+## Template
+
+You can use icon component in templates like this:
+
+```html
+<Icon icon="LineUser" />
+```
+
+or
+
+```html
+<Icon icon="line-user" />
+```
+
+Both do the job.
+
+You can add attributes as many as you want like this:
+
+```html
+<Icon icon="line-user" width="18px" height="18px" style="color: red;" />
+```
+
+## Details
+
+```bash
+Usage: node tasks/svgv.js -s [source path] -t [target path]
+Usage: node tasks/svgv.js --source=[source path] --target=[target path]
+
+Options:
+      --help     Show usage                                            [boolean]
+      --version  Show version number                                   [boolean]
+  -s, --source   Source path                                            [string]
+  -t, --target   Target path                                            [string]
+```
+
+## TODO
+
+- [ ] Make a standalone github repo
+- [ ] Add full CLI interface
+- [ ] Publish to npm directory

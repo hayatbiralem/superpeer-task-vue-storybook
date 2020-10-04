@@ -1,0 +1,13 @@
+/* ==========================================================================
+   #CALL-DETAILS
+   ========================================================================== */
+
+$var: true !default;
+
+.c-call-details__heading {
+  margin-bottom: 14px;
+}
+
+.c-call-details__meta:not(:last-child) {
+  margin-bottom: 8px;
+}

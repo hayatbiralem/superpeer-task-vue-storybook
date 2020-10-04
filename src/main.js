@@ -1,3 +1,6 @@
+import "./styles/main.scss";
+import "./utils/polyfills";
+
 import Vue from "vue";
 import App from "./App.vue";
 

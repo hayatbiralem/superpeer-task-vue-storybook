@@ -1,0 +1,13 @@
+/* ==========================================================================
+   #ICON-CONTROLS
+   ========================================================================== */
+
+$icon-controls-gap: 12px !default;
+
+.c-icon-controls__items {
+  font-size: 0;
+}
+
+.c-icon-controls__item:not(:first-child) {
+  margin-left: $icon-controls-gap;
+}

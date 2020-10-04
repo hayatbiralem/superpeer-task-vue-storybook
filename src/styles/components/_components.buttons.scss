@@ -1,0 +1,217 @@
+/* ==========================================================================
+   #BUTTONS
+   ========================================================================== */
+
+$button-padding-vertical: $global-spacing-unit-small !default;
+$button-padding-horizontal: $global-spacing-unit !default;
+$button-transition: $global-transition !default;
+$button-radius: $global-radius !default;
+
+$button-small-padding-vertical: $global-spacing-unit-tiny !default;
+$button-small-padding-horizontal: $global-spacing-unit-small !default;
+
+$button-large-padding-vertical: $global-spacing-unit !default;
+$button-large-padding-horizontal: $global-spacing-unit-large !default;
+
+$button-ghost-border-width: 1px !default;
+
+$button-background-color: $color-gray-10 !default;
+
+$button-icon-width: 48px !default;
+$button-icon-height: 48px !default;
+$button-icon-size: 20px !default;
+$button-icon-margin-top: -1px !default;
+$button-icon-margin-bottom: -1px !default;
+
+/**
+ * 1. Allow us to style box model properties.
+ * 2. Line different sized buttons up a little nicer.
+ * 3. Make buttons inherit font styles (often necessary when styling `input`s as
+ *    buttons).
+ * 4. Reset/normalize some styles.
+ * 5. Force all button-styled elements to appear clickable.
+ * 6. Reset native button element's border.
+ * 7. Design button focus states for better usability. See: https://dev.to/elizabethschafer/designing-button-focus-states-for-better-usability-gm2
+ * 8. Normalize button background for all browsers.
+ * 9. For vertical alignment.
+ */
+
+.c-btn {
+  display: inline-block; /* [1] */
+  display: inline-flex; /* [9] */
+  align-items: center; /* [9] */
+  justify-content: center; /* [9] */
+
+  vertical-align: middle; /* [2] */
+  font: inherit; /* [3] */
+  text-align: center; /* [4] */
+  margin: 0; /* [4] */
+  cursor: pointer; /* [5] */
+  padding: $button-padding-vertical $button-padding-horizontal;
+  transition: $button-transition;
+  border: none /* [6] */;
+  border-radius: $button-radius;
+  background: $button-background-color /* [8] */;
+  line-height: $global-line-height;
+
+  &,
+  &:hover,
+  &:active,
+  &:focus {
+    text-decoration: none; /* [4] */
+  }
+
+  &:active,
+  &:focus {
+    outline: none; /* [7] */
+    box-shadow: 0 0 0 2px #fff, 0 0 3px 5px $color-primary; /* [7] */
+  }
+}
+
+/* Icon
+   ========================================================================== */
+
+.c-btn--icon {
+  width: $button-icon-width;
+  height: $button-icon-width;
+  padding-left: $button-padding-vertical;
+  padding-right: $button-padding-vertical;
+}
+
+.c-btn__icon {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.c-btn__icon:not(:last-child) {
+  margin-right: 10px;
+}
+
+/* Round (circle) variant
+   ========================================================================== */
+
+.c-btn--round {
+  border-radius: 50%;
+}
+
+/* Block (full-width) variant
+   ========================================================================== */
+
+.c-btn--block {
+  display: block;
+  display: flex;
+  width: 100%;
+}
+
+/* Style variants
+   ========================================================================== */
+
+.c-btn--primary {
+  background-color: $color-primary;
+
+  &,
+  &:hover,
+  &:active,
+  &:focus {
+    color: #fff;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: darken($color-primary, 10%);
+  }
+}
+
+.c-btn--hover-primary {
+  &:hover,
+  &:active,
+  &:focus {
+    color: #fff;
+    background-color: darken($color-primary, 10%);
+  }
+}
+
+/* Size variants
+   ========================================================================== */
+
+.c-btn--small {
+  padding: $button-small-padding-vertical $button-small-padding-horizontal;
+}
+
+.c-btn--large {
+  padding: $button-large-padding-vertical $button-large-padding-horizontal;
+}
+
+/* Ghost buttons
+   ========================================================================== */
+
+/**
+ * Ghost buttons have see-through backgrounds and are bordered.
+ */
+
+.c-btn--ghost {
+  border: $button-ghost-border-width solid currentColor;
+  padding: ($button-padding-vertical - $button-ghost-border-width)
+    ($button-padding-horizontal - $button-ghost-border-width);
+
+  &,
+  &:active,
+  &:focus {
+    background: none;
+  }
+
+  &.c-btn--primary {
+    color: $color-primary;
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: darken($color-primary, 10%);
+      background: rgba($color-primary, 0.1);
+    }
+  }
+}
+
+/* Active State
+   ========================================================================== */
+
+.c-btn--active {
+  &,
+  &:hover,
+  &:active,
+  &:focus {
+    color: #fff;
+    background-color: darken($color-primary, 10%);
+  }
+}
+
+/* Disable State
+   ========================================================================== */
+
+.c-btn[disabled] {
+  opacity: 0.4;
+  cursor: not-allowed;
+
+  &:hover,
+  &:active,
+  &:focus {
+    box-shadow: none; /* [7] */
+  }
+}
+
+.c-btn--primary[disabled] {
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: $color-primary;
+  }
+}
+
+.c-btn--ghost.c-btn--primary[disabled] {
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: transparent;
+  }
+}

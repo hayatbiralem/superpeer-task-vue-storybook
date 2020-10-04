@@ -1,0 +1,44 @@
+/* ==========================================================================
+   #META
+   ========================================================================== */
+
+$meta-bg: $color-white !default;
+$meta-padding: 16px !default;
+$meta-font-size: 13px !default;
+$meta-line-height: 16px !default;
+
+.c-meta {
+  padding: $meta-padding;
+
+  border: 1px solid $color-border;
+  border-radius: $global-radius;
+  background-color: $meta-bg;
+}
+
+.c-meta--inline {
+  display: inline-block;
+}
+
+.c-meta__items {
+  white-space: nowrap;
+  margin-bottom: -1px;
+  font-size: 0;
+}
+
+.c-meta__item {
+  font-size: $meta-font-size;
+  line-height: $meta-line-height;
+}
+
+.c-meta__item:not(:first-child) {
+  margin-left: 26px;
+}
+
+.c-meta__icon {
+  vertical-align: top;
+  width: 18px;
+  height: 18px;
+  margin-top: -1px;
+  margin-right: 4px;
+  fill: $color-primary;
+}

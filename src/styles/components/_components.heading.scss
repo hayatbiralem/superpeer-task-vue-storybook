@@ -1,0 +1,25 @@
+/* ==========================================================================
+   #HEADING
+   ========================================================================== */
+
+$heading-font-size: 24px !default;
+
+$heading-prefix-font-size: 13px !default;
+$heading-prefix-line-height: 16px !default;
+
+.c-heading {
+  font-weight: 700;
+  font-size: $heading-font-size;
+}
+
+.c-heading__prefix {
+  display: block;
+  font-weight: 400;
+  font-size: $heading-prefix-font-size;
+  line-height: $heading-prefix-line-height;
+  color: $color-primary;
+}
+
+.c-heading__prefix:not(:last-child) {
+  margin-bottom: -1px;
+}

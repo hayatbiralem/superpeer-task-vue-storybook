@@ -1,0 +1,51 @@
+///* ========================================================================
+//   #PREVENT-ZOOM-ON-FOCUS-FIX
+//   ======================================================================== */
+
+// No input zoom in Safari on iPhone, the pixel perfect way. Further reading:
+// https://thingsthemselves.com/no-input-zoom-in-safari-on-iphone-the-pixel-perfect-way/#:~:text=The%20cause%20of%20this%20issue,size%20is%20less%20than%2016px.
+//
+// .usage {
+//   @include prevent-zoom-on-focus-fix(
+//     (
+//       font-size: 15px,
+//       width: 100%,
+//       height: 40px,
+//       padding-top: 12px,
+//       padding-bottom: 12px,
+//       padding-left: 24px,
+//       padding-right: 24px,
+//       border-radius: 8px
+//     )
+//   );
+// }
+
+@mixin prevent-zoom-on-focus-fix($properties) {
+  @if not map-has-key($properties, "font-size") {
+    @warn "font-size property is missing";
+  } @else {
+    @if not map-has-key($properties, "height") {
+      @warn "height property is missing";
+    } @else {
+      // enlarge by 16/$font-size */
+      $font-size: strip-unit(map-get($properties, "font-size"));
+      $factor: 16 / $font-size;
+      font-size: 16px;
+      @each $key, $val in $properties {
+        @if $key != "font-size" {
+          #{$key}: ($val * $factor);
+        }
+      }
+
+      // scale down by $font-size/16
+      $scale-factor: $font-size / 16;
+      transform: scale($scale-factor);
+      transform-origin: left top;
+
+      // remove extra white space
+      $height: map-get($properties, "height");
+      margin-bottom: ($height - ($height * $factor));
+      margin-right: (100% - (100% * $factor));
+    }
+  }
+}

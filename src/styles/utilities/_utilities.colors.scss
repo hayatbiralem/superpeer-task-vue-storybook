@@ -1,0 +1,26 @@
+/* ==========================================================================
+   #COLORS
+   ========================================================================== */
+
+/**
+ * Color utilities.
+ */
+
+$colors: (
+  primary: $color-primary,
+  text: $color-text,
+);
+
+/**
+ * Text colors.
+ */
+
+@include loop-collection($colors, ".u-text-color-", "color");
+
+/**
+ * Bg colors.
+ *
+ * We do not need at this moment but we could something like this.
+ */
+
+// @include loop-collection($colors, ".u-bg-color-", "background-color");

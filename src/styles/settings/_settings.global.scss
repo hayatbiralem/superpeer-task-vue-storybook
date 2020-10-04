@@ -1,0 +1,15 @@
+///* ========================================================================
+//   #GLOBAL
+//   ======================================================================== */
+
+// The global settings file contains any project-wide variables; things that
+// need to be made available to the entire codebase.
+
+// Standardise some UI treatments.
+//
+// 1. See https://css-tricks.com/snippets/css/system-font-stack/
+
+$global-radius: 8px !default;
+$global-transition: all 300ms ease-in-out !default;
+$global-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif !default; /* [1] */

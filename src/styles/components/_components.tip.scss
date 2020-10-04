@@ -1,0 +1,13 @@
+/* ==========================================================================
+   #TIP
+   ========================================================================== */
+
+$tip-font-size: 13px !default;
+$tip-line-height: 16px !default;
+$tip-color: $color-gray-80 !default;
+
+.c-tip {
+  font-size: $tip-font-size;
+  line-height: $tip-line-height;
+  color: $tip-color;
+}

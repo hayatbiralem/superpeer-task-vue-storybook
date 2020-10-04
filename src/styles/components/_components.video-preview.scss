@@ -1,0 +1,27 @@
+/* ==========================================================================
+   #VIDEO-PREVIEW
+   ========================================================================== */
+
+.c-video-preview {
+  margin-bottom: $global-spacing-unit;
+}
+
+.c-video-preview__figure {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.c-video-preview__image {
+  display: block;
+  width: 100%;
+  border-radius: $global-radius;
+}
+
+.c-video-preview__controls {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 12px;
+
+  text-align: center;
+}

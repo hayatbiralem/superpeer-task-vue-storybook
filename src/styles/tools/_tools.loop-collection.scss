@@ -1,0 +1,17 @@
+///* ========================================================================
+//   #LOOP-COLLECTION
+//   ======================================================================== */
+
+// Mixin to collection to produce collection based utilities or modifiers.
+//
+// .usage {
+//   @include loop-collection($collection, $prefix, $property);
+// }
+
+@mixin loop-collection($collection: null, $prefix: null, $property: null) {
+  @each $name, $value in $collection {
+    #{$prefix}#{$name} {
+      #{$property}: $value;
+    }
+  }
+}

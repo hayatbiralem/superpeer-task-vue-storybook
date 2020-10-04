@@ -1,0 +1,19 @@
+///* ========================================================================
+//   #COMMON
+//   ======================================================================== */
+
+// This part of the framework could be used in module css.
+// https://css-tricks.com/css-modules-part-1-need/
+
+// SETTINGS
+@import "settings/settings.core";
+@import "settings/settings.global";
+@import "settings/settings.colors";
+
+// TOOLS
+@import "tools/tools.clearfix";
+@import "tools/tools.hidden";
+@import "tools/tools.strip-unit";
+@import "tools/tools.loop-collection";
+@import "tools/tools.prevent-zoom-on-focus-fix";
+@import "node_modules/sass-mq/mq";

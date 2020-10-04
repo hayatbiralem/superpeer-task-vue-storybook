@@ -1,0 +1,203 @@
+/* ==========================================================================
+   #FORMS
+   ========================================================================== */
+
+$input-border-width: 1px !default;
+
+$input-transition: $global-transition !default;
+
+$input-text-height: 48px !default;
+$input-text-padding-vertical: 14px !default;
+$input-text-padding-horizontal: 16px !default;
+$input-text-background: $color-white;
+
+$label-width: 100px;
+$label-gap: $global-spacing-unit-tiny;
+
+/**
+ * 1. Design input focus states for better usability. See: https://dev.to/elizabethschafer/designing-button-focus-states-for-better-usability-gm2
+ * 2. No input zoom in Safari on iPhone, the pixel perfect way. See: https://thingsthemselves.com/no-input-zoom-in-safari-on-iphone-the-pixel-perfect-way/#:~:text=The%20cause%20of%20this%20issue,size%20is%20less%20than%2016px.
+ * 3. IE11 fix. See: https://gist.github.com/vladimirsiljkovic/ef176cae54d3c4d1992907e1e0723210
+ * 4. Because of the [2] we need to prevent half pixels on borders so we use following span element for borders to be able to use `:focus + selector` rule syntax.
+ */
+
+/* Label
+   ========================================================================== */
+
+.c-form__label {
+  font-size: 15px;
+}
+
+/* Field
+  ========================================================================== */
+
+.c-form__field {
+  position: relative;
+  z-index: 2;
+  height: $input-text-height;
+}
+
+/* Input
+  ========================================================================== */
+
+.c-form__input {
+  display: block;
+  // height: $input-text-height;
+  // padding: $input-text-padding-vertical $input-text-padding-horizontal;
+  // border: $input-border-width solid $color-border;
+  border: none;
+  border-radius: $global-radius;
+  appearance: none;
+  background: none;
+
+  &:focus,
+  &:active {
+    outline: none;
+  }
+
+  @include prevent-zoom-on-focus-fix(
+    (
+      font-size: 15px,
+      width: 100%,
+      height: $input-text-height,
+      padding-top: $input-text-padding-vertical,
+      padding-bottom: $input-text-padding-vertical,
+      padding-left: $input-text-padding-horizontal,
+      padding-right: $input-text-padding-horizontal,
+      border-radius: $global-radius
+    )
+  ); /* [2] */
+}
+
+
+/* [4] */
+.c-form__input-base {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  display: block;
+
+  border: $input-border-width solid $color-border;
+  border-radius: $global-radius;
+  background-color: $input-text-background;
+
+  transition: $input-transition;
+}
+
+.c-form__input:focus ~ .c-form__input-base {
+  outline: none; /* [1] */
+  box-shadow: 0 0 0 2px #fff, 0 0 3px 5px $color-primary; /* [1] */
+}
+
+/* Select
+  ========================================================================== */
+
+.c-form__input--select {
+  padding-right: 44px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  &::-ms-expand {
+    display: none; /* [3] */
+  }
+}
+
+/* Textarea
+   ========================================================================== */
+
+.c-form__field--textarea,
+.c-form__field--textarea .c-form__input {
+  height: auto;
+}
+
+/* Left icon
+   ========================================================================== */
+
+.c-form__field--icon-left .c-form__input {
+  padding-left: ($input-text-padding-horizontal * 3);
+}
+
+.c-form__icon {
+  position: absolute;
+  top: 50%;
+
+  width: 24px;
+  height: 24px;
+
+  margin-top: (24px / -2);
+
+  fill: $color-primary;
+}
+
+.c-form__icon--left {
+  left: $input-text-padding-horizontal;
+}
+
+.c-form__group:not(:last-child) {
+  margin-bottom: 8px;
+}
+
+/* Caret
+   ========================================================================== */
+
+.c-form__caret {
+  position: absolute;
+  top: 50%;
+  right: $input-text-padding-horizontal;
+
+  width: 18px;
+  height: 18px;
+
+  margin-top: (18px / -2);
+
+  pointer-events: none;
+}
+
+/* Left Label
+   ========================================================================== */
+
+.c-form--left-label .c-form__group {
+  display: flex;
+}
+
+.c-form--left-label .c-form__group,
+.c-form--left-label .c-form__label,
+.c-form--left-label .c-form__field {
+  flex-basis: 0;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+.c-form--left-label .c-form__label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: $label-width;
+  padding-right: $label-gap;
+}
+
+/* Error State
+   ========================================================================== */
+
+.c-form__field--error > .c-form__input-base {
+  border-color: $color-danger;
+}
+
+/* Success State
+   ========================================================================== */
+
+.c-form__field--success > .c-form__input-base {
+  border-color: $color-success;
+}
+
+/* Disable State
+   ========================================================================== */
+
+.c-form__field--disabled {
+  opacity: 0.4;
+}
