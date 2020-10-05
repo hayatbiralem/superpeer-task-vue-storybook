@@ -56,7 +56,7 @@ export default {
       default: () => [] // https://github.com/vuejs/vue/issues/1032#issuecomment-120212888
     }
   },
-  data: function() {
+  data() {
     return {
       localValue: this.value
     };

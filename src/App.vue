@@ -1,18 +1,21 @@
 <template>
   <div id="app" class="c-app">
     <TheWaitingRoom v-bind="$data" />
+    <DocsToolbar />
   </div>
 </template>
 
 <script>
 import Vue from "vue";
 import TheWaitingRoom from "./components/TheWaitingRoom";
+import DocsToolbar from "./components/DocsToolbar";
 import response from "./data/example-api-response.js";
 
 export default Vue.extend({
   name: "App",
   components: {
-    TheWaitingRoom
+    TheWaitingRoom,
+    DocsToolbar
   },
   data() {
     return {

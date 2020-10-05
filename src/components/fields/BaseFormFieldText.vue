@@ -53,7 +53,7 @@ export default {
       }
     }
   },
-  data: () => {
+  data() {
     return {
       localValue: this.value
     };

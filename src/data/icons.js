@@ -3,6 +3,7 @@ export default [
   "FillCalendar",
   "FillCamera",
   "FillClock",
+  "FillGithub",
   "FillMicrophone",
   "FillOptions",
   "LineUser"
