@@ -1,5 +1,3 @@
-# superpeer-task-vue-storybook
-
-### We have a UI component explorer powered by Storybook
+# Superpeer Task: Vue & Storybook
 
 Go to [Storybook UI Explorer &raquo;](#ui);
