@@ -1,5 +1,7 @@
 # Superpeer Task: Vue & Storybook
 
+This project tries to solve the task from Superpeer using Vue and Storybook.
+
 ## Demo
 
 https://superpeer-task-vue-storybook.vercel.app
