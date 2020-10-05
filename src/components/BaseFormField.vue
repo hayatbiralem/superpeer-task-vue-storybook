@@ -24,7 +24,7 @@ export default {
       type: String,
       default: fields[0],
       required: true,
-      validator: value => {
+      validator: function(value) {
         return fields.indexOf(pascalCase(value)) !== -1;
       }
     },
@@ -58,7 +58,7 @@ export default {
     state: {
       type: String,
       default: states[0],
-      validator: value => {
+      validator: function(value) {
         return states.indexOf(value) !== -1;
       }
     }

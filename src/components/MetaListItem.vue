@@ -22,7 +22,7 @@ export default {
     icon: {
       type: String,
       default: icons[0],
-      validator: value => {
+      validator: function(value) {
         if (!value) {
           return true;
         } else {

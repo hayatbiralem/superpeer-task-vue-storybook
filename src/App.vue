@@ -9,7 +9,7 @@
 import Vue from "vue";
 import TheWaitingRoom from "./components/TheWaitingRoom";
 import DocsToolbar from "./components/DocsToolbar";
-import response from "./data/example-api-response.js";
+import response from "./data/example-api-response";
 
 export default Vue.extend({
   name: "App",
