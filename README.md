@@ -1,3 +1,9 @@
 # Superpeer Task: Vue & Storybook
 
-Go to [Storybook UI Explorer &raquo;](https://superpeer-task-vue-storybook.vercel.app/ui/);
+## Demo
+
+https://superpeer-task-vue-storybook.vercel.app
+
+## Storybook / UI Explorer
+
+https://superpeer-task-vue-storybook.vercel.app/ui/
