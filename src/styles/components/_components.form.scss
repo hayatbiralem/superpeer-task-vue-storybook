@@ -25,6 +25,7 @@ $label-gap: $global-spacing-unit-tiny;
    ========================================================================== */
 
 .c-form__label {
+  display: block;
   font-size: 15px;
 }
 
@@ -68,7 +69,6 @@ $label-gap: $global-spacing-unit-tiny;
     )
   ); /* [2] */
 }
-
 
 /* [4] */
 .c-form__input-base {
@@ -115,10 +115,10 @@ $label-gap: $global-spacing-unit-tiny;
   height: auto;
 }
 
-/* Left icon
+/* Left
    ========================================================================== */
 
-.c-form__field--icon-left .c-form__input {
+.c-form__field--icon .c-form__input {
   padding-left: ($input-text-padding-horizontal * 3);
 }
 
@@ -158,22 +158,29 @@ $label-gap: $global-spacing-unit-tiny;
   pointer-events: none;
 }
 
-/* Left Label
+/* Default
    ========================================================================== */
 
-.c-form--left-label .c-form__group {
+.c-form--default .c-form__label {
+  margin-bottom: $global-spacing-unit-tiny;
+}
+
+/* Horizontal
+   ========================================================================== */
+
+.c-form--horizontal .c-form__group {
   display: flex;
 }
 
-.c-form--left-label .c-form__group,
-.c-form--left-label .c-form__label,
-.c-form--left-label .c-form__field {
+.c-form--horizontal .c-form__group,
+.c-form--horizontal .c-form__label,
+.c-form--horizontal .c-form__field {
   flex-basis: 0;
   flex-grow: 1;
   flex-shrink: 1;
 }
 
-.c-form--left-label .c-form__label {
+.c-form--horizontal .c-form__label {
   display: flex;
   flex-direction: column;
   justify-content: center;

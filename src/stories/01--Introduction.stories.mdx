@@ -7,15 +7,61 @@ import PixelPerfect from "../../pixel-perfect.png";
 
 This is a story about how the [Superpeer](https://twitter.com/superpeer) found [their UI Developer](https://github.com/hayatbiralem), I hope :)
 
-## Vue & Storybook
+## Storybook
 
 I follow [this tutorial](https://www.learnstorybook.com/intro-to-storybook/vue/en/get-started/) to build this Storybook which is awesome.
+
+## Vue
+
+I tried to follow the Vue's Official [Style Guide](https://vuejs.org/v2/style-guide/) especially naming conventions.
 
 ## CSS Architecture
 
 I used the [InuitCSS](https://github.com/inuitcss/inuitcss/) Architecture based on ITCSS and BEM Methodology to cover [More Transparent UI Code with Namespaces](https://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces/).
 
 InuitCSS is not a CSS Framework like Bootstrap, it does not contain any cosmetics.
+
+## Clean Folder Structure
+
+Components (without styles), stories, and styles have their own directories.
+
+```
+src/
+├── components/
+│   ├── icons/
+│   │   ├── index.js
+│   │   ├── FillArrowDown.vue
+│   │   ⋮
+│   │   └── LineUser.vue
+│   ├── Button.vue
+│   ⋮
+│   └── WaitingRoom.vue
+├── data/
+├── stories/
+│   ├── 0--Introduction.stories.mdx
+│   ⋮
+│   └── Button.stories.js
+├── styles/
+│   ├── components/
+│   │   ├── _components.buttons.scss
+│   │   ⋮
+│   │   └── _components.waiting-room.scss
+│   ├── elements/
+│   ├── generic/
+│   ├── objects/
+│   ├── settings/
+│   ├── tools/
+│   ├── utilities/
+│   ├── _common.scss
+│   └── main.scss
+└── utils/
+    └── polyfills.js
+```
+
+## Tools
+
+- I make a tool named [SVGV](/?path=/story/docs-svgv--page#svg-what) to export SVG Icons as Vue Components like @svgr/cli. [Learn more &raquo;](/?path=/story/docs-svgv--page#svg-what)
+- I make a SASS Mixin to solve a common issue on mobile named `prevent-zoom-on-focus-fix`.
 
 ## CSS Modules (partly)
 
@@ -29,15 +75,15 @@ I used the [CSS Module](https://css-tricks.com/css-modules-part-1-need/) approac
 
 ## Performance
 
-- I used inline SVG sprite.
+- I used inline SVG.
 - I used responsive images.
 - I used mobile first approach.
 
-## User Experience
+## User Experience (for Testers)
 
 - I made sure that the real mobile experience can be tested at widths of 479px and below.
 - I sent simple closure functions to the buttons via VueJS.
-- I've generate sprite icons via CLI.
+- I've generate SVG Icons as Vue Components via CLI.
 
 ## Bugfix Diary
 
@@ -52,10 +98,3 @@ I used the [CSS Module](https://css-tricks.com/css-modules-part-1-need/) approac
 I tried to achieve pixel perfect by using screenshots as layers in Photoshop.
 
 <img src={PixelPerfect} alt="Pixel Perfect" />
-
-## My Qualifications
-
-- I love CSS, Math and solving problems.
-- I've been coding CSS since 2010.
-- I also know NodeJS, PHP, Laravel, WordPress, bash and servers... In short I know back-end stuff.
-- I'm good at reading and writing in English. I've been talking to Cambly teachers for two years now (you can verify that by following [this link](https://www.cambly.com/en/certificate/verify/f8478219)), so I'm good at listening and speaking too. I am comfortable in daily conversations but I must say that my vocabulary and grammar are poor.

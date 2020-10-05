@@ -1,28 +1,34 @@
 <template>
-  <div class="c-call-details u-text-align-center">
+  <div :class="classes">
     <!-- .c-call-details__heading -->
-    <div class="c-call-details__heading" v-if="heading">
-      <Heading
+    <div class="c-call-details__heading" v-if="headingPrefix || headingText">
+      <BaseHeading
         class="u-margin-bottom-none"
-        :prefix="heading.prefix"
-        :text="heading.text"
-      ></Heading>
+        :prefix="headingPrefix"
+        :text="headingText"
+      ></BaseHeading>
     </div>
     <!-- /.c-call-details__heading -->
 
     <!-- .c-call-details__time -->
-    <div class="c-call-details__time" v-if="meta || timezone">
+    <div
+      class="c-call-details__time"
+      v-if="(metaItems && metaItems.length) || timezone"
+    >
       <!-- .c-call-details__meta -->
-      <div class="c-call-details__meta" v-if="meta">
-        <UIMeta :data="meta" :is-inline="1"></UIMeta>
+      <div class="c-call-details__meta" v-if="metaItems">
+        <MetaList
+          :items="metaItems"
+          layout="inline"
+          decoration="bordered"
+          class="u-display-inline-block"
+        ></MetaList>
       </div>
       <!-- /.c-call-details__meta -->
 
       <!-- .c-call-details__timezone -->
       <div class="c-call-details__timezone" v-if="timezone">
-        <!-- .c-tip -->
-        <div class="c-tip">{{ timezone }}</div>
-        <!-- /.c-tip -->
+        <BaseTip :text="timezone" />
       </div>
       <!-- /.c-call-details__timezone -->
     </div>
@@ -31,22 +37,42 @@
 </template>
 
 <script>
-import UIMeta from "./Meta";
-import Heading from "./Heading";
+import MetaList from "./MetaList";
+import BaseHeading from "./BaseHeading";
+import BaseTip from "./BaseTip";
 
 export default {
   name: "CallDetails",
-  props: ["data"],
-  components: {
-    UIMeta,
-    Heading
+  props: {
+    headingPrefix: {
+      type: String
+    },
+    headingText: {
+      type: String
+    },
+    metaItems: {
+      type: Array,
+      default: () => [] // https://github.com/vuejs/vue/issues/1032#issuecomment-120212888
+    },
+    timezone: {
+      type: String
+    },
+    extraClassNames: {
+      type: String
+    }
   },
-  data() {
-    return {
-      heading: this.data.heading || null,
-      meta: this.data.meta || null,
-      timezone: this.data.timezone || null
-    };
+  components: {
+    MetaList,
+    BaseHeading,
+    BaseTip
+  },
+  computed: {
+    classes() {
+      return {
+        "c-call-details": true,
+        [`${this.extraClassNames}`]: true
+      };
+    }
   }
 };
 </script>
@@ -54,5 +80,4 @@ export default {
 <style lang="scss">
 @import "../styles/common";
 @import "../styles/components/components.call-details";
-@import "../styles/components/components.tip";
 </style>

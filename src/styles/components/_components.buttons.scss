@@ -68,26 +68,6 @@ $button-icon-margin-bottom: -1px !default;
   }
 }
 
-/* Icon
-   ========================================================================== */
-
-.c-btn--icon {
-  width: $button-icon-width;
-  height: $button-icon-width;
-  padding-left: $button-padding-vertical;
-  padding-right: $button-padding-vertical;
-}
-
-.c-btn__icon {
-  width: 20px;
-  height: 20px;
-  fill: currentColor;
-}
-
-.c-btn__icon:not(:last-child) {
-  margin-right: 10px;
-}
-
 /* Round (circle) variant
    ========================================================================== */
 
@@ -163,7 +143,10 @@ $button-icon-margin-bottom: -1px !default;
 
   &.c-btn--primary {
     color: $color-primary;
+  }
 
+  &.c-btn--primary,
+  &.c-btn--hover-primary {
     &:hover,
     &:active,
     &:focus {
@@ -171,6 +154,53 @@ $button-icon-margin-bottom: -1px !default;
       background: rgba($color-primary, 0.1);
     }
   }
+}
+
+/* BaseIcon
+   ========================================================================== */
+
+.c-btn--icon {
+  width: $button-icon-width;
+  height: $button-icon-width;
+  padding-left: $button-padding-vertical;
+  padding-right: $button-padding-vertical;
+}
+
+.c-btn__icon {
+  width: $button-icon-size;
+  height: $button-icon-size;
+  fill: currentColor;
+}
+
+.c-btn__icon:not(:last-child) {
+  margin-right: 10px;
+}
+
+$sizes: (
+  small: (
+    $global-spacing-unit-factor-small / $global-spacing-unit-factor
+  ),
+  large: (
+    $global-spacing-unit-factor-large / $global-spacing-unit-factor
+  )
+);
+
+@each $size, $factor in $sizes {
+  .c-btn--icon.c-btn--#{$size} {
+    width: ($button-icon-width * $factor);
+    height: ($button-icon-width * $factor);
+    padding-left: ($button-padding-vertical * $factor);
+    padding-right: ($button-padding-vertical * $factor);
+  }
+
+  .c-btn--icon.c-btn--#{$size} .c-btn__icon {
+    width: ($button-icon-size * $factor);
+    height: ($button-icon-size * $factor);
+  }
+}
+
+.c-btn--icon.c-btn--ghost.c-btn--active {
+  border-color: $color-primary;
 }
 
 /* Active State

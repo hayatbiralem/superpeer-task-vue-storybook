@@ -1,0 +1,21 @@
+/* ==========================================================================
+   #META-ITEM
+   ========================================================================== */
+
+$meta-item-font-size: 13px !default;
+$meta-item-line-height: 16px !default;
+$meta-item-icon-size: 18px !default;
+
+.c-meta__icon {
+  vertical-align: top;
+  width: $meta-item-icon-size;
+  height: $meta-item-icon-size;
+  margin-top: -1px;
+  margin-right: 4px;
+  fill: $color-primary;
+}
+
+.c-meta__item {
+  font-size: $meta-item-font-size;
+  line-height: $meta-item-line-height;
+}

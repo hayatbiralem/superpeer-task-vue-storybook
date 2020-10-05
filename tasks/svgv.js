@@ -30,10 +30,13 @@ var argv = require("yargs") // eslint-disable-line
   })
   .default("s", "./src/icons")
   .default("t", "./dist/icons")
-  .default("j", "./dist/icons.json").argv;
+  .default("j", "./dist/icons.js").argv;
 
 var rimraf = require("rimraf");
 var camelCase = require("camelcase");
+const pascalCase = str => {
+  return camelCase(str, { pascalCase: true });
+};
 var basename = require("basename");
 var SVGO = require("svgo/lib/svgo");
 var svgo = new SVGO({
@@ -158,7 +161,7 @@ var walk = function(dir, done) {
       fs.appendFileSync(
         json,
         '  "' +
-          item.replace(".svg", "") +
+          pascalCase(item.replace(".svg", "")) +
           '"' +
           (index < list.length - 1 ? "," : "") +
           "\n",
@@ -194,12 +197,12 @@ var walk = function(dir, done) {
             svgo.optimize(data, { path: file }).then(function(result) {
               // console.log(result.data);
 
-              var fileNameCamelCase = camelCase(fileName, { pascalCase: true });
+              var fileNameCamelCase = pascalCase(fileName);
               var fileTo = target + "/" + fileNameCamelCase + ".vue";
 
               fs.writeFile(
                 fileTo,
-                "<template>\n%s\n</template>\n<script>\nexport default {};</script>".replace(
+                "<template>\n%s\n</template>\n<script>\nexport default {};\n</script>".replace(
                   "%s",
                   result.data.replace(
                     "<svg ",
@@ -244,14 +247,14 @@ rimraf(target, function(err) {
     }
 
     fs.unlinkSync(json);
-    fs.appendFileSync(json, "[\n", "utf8");
+    fs.appendFileSync(json, "export default [\n", "utf8");
 
     walk(source, function(error) {
       if (error) {
         throw error;
       } else {
         console.log("Scheduled!");
-        fs.appendFileSync(json, "]\n", "utf8");
+        fs.appendFileSync(json, "];\n", "utf8");
       }
     });
   }, 300);

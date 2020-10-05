@@ -1,0 +1,60 @@
+/* ==========================================================================
+   #META
+   ========================================================================== */
+
+$meta-item-list-bg: $color-white !default;
+$meta-item-list-padding: 16px !default;
+
+.c-meta__items {
+  font-size: 0;
+}
+
+/* Layout: Default
+   ========================================================================== */
+
+.c-meta--layout-default .c-meta__item:not(:last-child) {
+  margin-bottom: $global-spacing-unit-tiny;
+}
+
+/* Layout: Inline
+   ========================================================================== */
+
+.c-meta--layout-inline .c-meta__item {
+  display: inline-block;
+}
+
+.c-meta--layout-inline .c-meta__item:not(:last-child) {
+  margin-right: 26px;
+}
+
+/* Style: Bordered
+   ========================================================================== */
+
+.c-meta--style-bordered {
+  padding: $meta-item-list-padding;
+
+  border: 1px solid $color-border;
+  border-radius: $global-radius;
+  background-color: $meta-item-list-bg;
+}
+
+/*
+.c-meta--bordered {
+  padding: $meta-item-list-padding;
+
+  border: 1px solid $color-border;
+  border-radius: $global-radius;
+  background-color: $meta-item-list-bg;
+}
+
+.c-meta__items {
+  white-space: nowrap;
+  margin-bottom: -1px;
+  font-size: 0;
+}
+
+.c-meta__item:not(:first-child) {
+  margin-left: 26px;
+}
+
+*/

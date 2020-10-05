@@ -25,3 +25,7 @@
 
   text-align: center;
 }
+
+.c-video-preview__controls .c-btn:not(:first-child) {
+  margin-left: 12px;
+}

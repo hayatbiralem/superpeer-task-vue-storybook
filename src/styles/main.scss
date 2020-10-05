@@ -36,6 +36,7 @@
  *                      headings 1 through 6.
  * Images...............Base image styles.
  * Tables...............Simple table styles.
+ * SVG..................Cascading SVG fill color.
  *
  * OBJECTS
  * List-bare............Lists with no bullets or indents.
@@ -46,7 +47,8 @@
  * Waiting-room.........Major wrapper for demo purposes.
  * Card.................Sleek box for demo purposes.
  * Call-details.........Card header.
- * Meta.................Card meta.
+ * Meta-list-item.......Card meta list item.
+ * Meta-list............Card meta list.
  * Heading..............Section heading.
  * Tip..................Muted info text.
  * Video-preview........Video preview with icon controls.
@@ -59,6 +61,7 @@
  * Colors...............Color utilities.
  * Align................Align utilities.
  * Spacing..............Spacing utilities.
+ * Display..............Display utilities.
  */
 
 // COMMON (Settings and Tools)
@@ -75,6 +78,7 @@
 @import "elements/elements.headings";
 @import "elements/elements.images";
 @import "elements/elements.tables";
+@import "elements/elements.svg";
 
 // OBJECTS
 @import "objects/objects.list-bare";
@@ -89,7 +93,8 @@
 // @import "components/components.card";
 // @import "components/components.call-details";
 // @import "components/components.heading";
-// @import "components/components.meta";
+// @import "components/components.meta-list";
+// @import "components/components.meta-list-item";
 // @import "components/components.tip";
 // @import "components/components.video-preview";
 // @import "components/components.icon-controls";
@@ -101,3 +106,4 @@
 @import "utilities/utilities.colors";
 @import "utilities/utilities.align";
 @import "utilities/utilities.spacings";
+@import "utilities/utilities.display";

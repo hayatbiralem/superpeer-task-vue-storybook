@@ -6,17 +6,17 @@
     :style="style"
     @click="onClick"
   >
-    <Icon class="c-btn__icon" :icon="icon" v-if="icon"></Icon>
+    <BaseIcon class="c-btn__icon" :icon="icon" v-if="icon"></BaseIcon>
     <span class="c-btn__label" v-if="label">{{ label }}</span>
     <slot></slot>
   </button>
 </template>
 
 <script>
-import Icon from "./Icon";
+import BaseIcon from "./BaseIcon";
 
 export default {
-  name: "Button",
+  name: "BaseButton",
   props: {
     label: {
       type: String
@@ -55,7 +55,7 @@ export default {
     size: {
       type: String,
       default: "medium",
-      validator: function(value) {
+      validator: value => {
         return ["small", "medium", "large"].indexOf(value) !== -1;
       }
     },
@@ -67,7 +67,7 @@ export default {
     }
   },
   components: {
-    Icon
+    BaseIcon
   },
   data() {
     return {
@@ -76,7 +76,7 @@ export default {
     };
   },
   methods: {
-    toggle: function() {
+    toggle() {
       this.localIsActive = !this.localIsActive;
     },
     onClick() {
@@ -84,7 +84,7 @@ export default {
     }
   },
   computed: {
-    classes: function() {
+    classes() {
       return {
         "c-btn--primary": this.isPrimary,
         "c-btn--hover-primary": this.isHoverPrimary,

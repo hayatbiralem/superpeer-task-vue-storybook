@@ -1,8 +1,10 @@
-import UIButton from "../components/Button";
+import BaseButton from "../components/BaseButton";
+
+import icons from "../data/icons";
 
 export default {
-  title: "Components/Button",
-  component: UIButton,
+  title: "Components/BaseButton",
+  component: BaseButton,
   argTypes: {
     color: { control: "color" },
     backgroundColor: { control: "color" },
@@ -12,7 +14,7 @@ export default {
     icon: {
       control: {
         type: "select",
-        options: require("../data/icons.json")
+        options: icons
       }
     }
   }
@@ -20,8 +22,8 @@ export default {
 
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { UIButton },
-  template: '<UIButton @onClick="onClick" v-bind="$props" />'
+  components: { BaseButton },
+  template: '<BaseButton @onClick="onClick" v-bind="$props" />'
 });
 
 export const Default = Template.bind({});
@@ -54,6 +56,12 @@ Small.args = {
   label: "Button"
 };
 
+export const Medium = Template.bind({});
+Medium.args = {
+  size: "medium",
+  label: "Button"
+};
+
 export const Large = Template.bind({});
 Large.args = {
   size: "large",
@@ -64,4 +72,27 @@ export const Active = Template.bind({});
 Active.args = {
   label: "Button",
   isActive: true
+};
+
+export const ButtonWithBaseIcon = Template.bind({});
+ButtonWithBaseIcon.args = {
+  label: "Button",
+  icon: "fill-camera"
+};
+
+export const IconButton = Template.bind({});
+IconButton.args = {
+  label: "",
+  isIcon: true,
+  isRound: true,
+  icon: "fill-camera"
+};
+
+export const IconButtonActive = Template.bind({});
+IconButtonActive.args = {
+  label: "",
+  isIcon: true,
+  isActive: true,
+  isRound: true,
+  icon: "fill-camera"
 };

@@ -1,22 +1,26 @@
 <template>
   <div id="app" class="c-app">
-    <WaitingRoom :data="data" />
+    <TheWaitingRoom v-bind="$data" />
   </div>
 </template>
 
 <script>
 import Vue from "vue";
-import WaitingRoom from "./components/WaitingRoom";
-import data from "./data";
+import TheWaitingRoom from "./components/TheWaitingRoom";
+import response from "./data/example-api-response.js";
 
 export default Vue.extend({
   name: "App",
   components: {
-    WaitingRoom
+    TheWaitingRoom
   },
   data() {
     return {
-      data: data
+      onSubmit: response.form.submit,
+      callDetails: response.callDetails,
+      videoPreview: response.videoPreview,
+      fields: response.form.fields,
+      submitText: response.submitText
     };
   }
 });

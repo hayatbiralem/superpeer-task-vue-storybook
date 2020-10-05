@@ -1,0 +1,20 @@
+/* ==========================================================================
+   #DISPLAY
+   ========================================================================== */
+
+/**
+ * Display utilities.
+ */
+
+$display-properties: (
+  none: none,
+  block: block,
+  inline-block: inline-block,
+  inline: inline
+);
+
+/**
+ * Loop display properties.
+ */
+
+@include loop-collection($display-properties, ".u-display-", "display");
