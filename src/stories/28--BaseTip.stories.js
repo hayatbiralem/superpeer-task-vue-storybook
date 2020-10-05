@@ -4,7 +4,7 @@ import {
   decorations
 } from "../components/BaseTip";
 
-import response from "../data/example-api-response.js";
+import response from "../data/example-api-response";
 
 export default {
   title: "Components/BaseTip",

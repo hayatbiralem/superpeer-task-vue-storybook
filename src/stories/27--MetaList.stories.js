@@ -37,7 +37,7 @@ const defaultArgs = {
   items: response.callDetails.metaItems
 };
 
-const getArgs = (args) => {
+const getArgs = args => {
   return Object.assign({}, defaultArgs, args);
 };
 

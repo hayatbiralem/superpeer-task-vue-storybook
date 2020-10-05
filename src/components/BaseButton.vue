@@ -55,7 +55,7 @@ export default {
     size: {
       type: String,
       default: "medium",
-      validator: value => {
+      validator: function(value) {
         return ["small", "medium", "large"].indexOf(value) !== -1;
       }
     },

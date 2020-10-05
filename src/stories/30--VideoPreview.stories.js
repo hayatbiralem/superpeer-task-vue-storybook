@@ -1,6 +1,6 @@
 import VideoPreview from "../components/VideoPreview";
 
-import response from "../data/example-api-response.js";
+import response from "../data/example-api-response";
 
 export default {
   title: "Components/VideoPreview",
@@ -11,7 +11,7 @@ export default {
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { VideoPreview },
-  template: '<VideoPreview v-bind="$props" />'
+  template: '<VideoPreview v-bind="$props" style="max-width: 336px;" />'
 });
 
 const defaultArgs = {

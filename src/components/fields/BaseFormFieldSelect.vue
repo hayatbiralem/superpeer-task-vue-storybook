@@ -47,7 +47,7 @@ export default {
     state: {
       type: String,
       default: states[0],
-      validator: value => {
+      validator: function(value) {
         return states.indexOf(value) !== -1;
       }
     },

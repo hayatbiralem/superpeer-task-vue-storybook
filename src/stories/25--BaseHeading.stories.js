@@ -1,6 +1,6 @@
 import BaseHeading from "../components/BaseHeading";
 
-import response from "../data/example-api-response.js";
+import response from "../data/example-api-response";
 
 export default {
   title: "Components/BaseHeading",

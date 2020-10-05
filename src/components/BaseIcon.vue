@@ -20,7 +20,7 @@ export default {
       type: String,
       default: icons[0],
       required: true,
-      validator: value => {
+      validator: function(value) {
         return icons.indexOf(pascalCase(value)) !== -1;
       }
     },

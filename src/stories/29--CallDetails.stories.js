@@ -1,6 +1,6 @@
 import CallDetails from "../components/CallDetails";
 
-import response from "../data/example-api-response.js";
+import response from "../data/example-api-response";
 
 export default {
   title: "Components/CallDetails",

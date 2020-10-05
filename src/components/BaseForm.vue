@@ -19,7 +19,7 @@ export default {
       type: String,
       default: layouts[0],
       required: true,
-      validator: value => {
+      validator: function(value) {
         return layouts.indexOf(value) !== -1;
       }
     },

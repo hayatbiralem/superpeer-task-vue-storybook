@@ -1,6 +1,5 @@
 import MetaListItem from "../components/MetaListItem";
 
-import response from "../data/example-api-response.js";
 import icons from "../data/icons";
 
 export default {
@@ -23,8 +22,8 @@ const Template = (args, { argTypes }) => ({
 });
 
 const defaultArgs = {
-  icon: response.callDetails.metaItems[0].icon,
-  text: response.callDetails.metaItems[0].text
+  icon: "fill-calendar",
+  text: "7 Oct, Weds"
 };
 
 const getArgs = args => {
@@ -37,11 +36,11 @@ Default.args = getArgs({});
 export const OnlyMeta = Template.bind({});
 OnlyMeta.args = getArgs({
   icon: "",
-  text: response.callDetails.meta[0].text
+  text: "7 Oct, Weds"
 });
 
 export const OnlyIcon = Template.bind({});
 OnlyIcon.args = getArgs({
-  icon: response.callDetails.meta[0].icon,
+  icon: "fill-calendar",
   text: ""
 });

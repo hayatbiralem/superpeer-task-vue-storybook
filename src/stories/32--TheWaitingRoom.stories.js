@@ -1,6 +1,6 @@
 import TheWaitingRoom from "../components/TheWaitingRoom";
 
-import response from "../data/example-api-response.js";
+import response from "../data/example-api-response";
 
 export default {
   title: "Components/TheWaitingRoom",
