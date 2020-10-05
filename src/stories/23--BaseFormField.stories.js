@@ -104,13 +104,13 @@ Select.args = getArgs({
 
 export const SelectStateDisabled = Template.bind({});
 SelectStateDisabled.args = getArgs({
-  type: "text",
+  type: "select",
   disabled: true
 });
 
 export const SelectStateError = Template.bind({});
 SelectStateError.args = getArgs({
-  type: "text",
+  type: "select",
   state: "error"
 });
 
