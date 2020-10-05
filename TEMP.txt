@@ -1,0 +1,16 @@
+/src/components/icons/FillCodesandbox.vue
+/src/components/icons/FillStorybook.vue
+/README.md
+/package.json
+/pixel-perfect.png
+/public/favicon.ico
+/public/images/video-preview.jpg
+/public/images/video-preview@2x.jpg
+/public/images/video-preview@3x.jpg
+/public/images/video-preview@4x.jpg
+/src/components/DocsToolbar.vue
+/src/components/VideoPreview.vue
+/src/components/icons/index.js
+/src/data/icons.js
+/src/stories/27--MetaList.stories.js
+/src/styles/\_common.scss
