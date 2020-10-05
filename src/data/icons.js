@@ -8,5 +8,6 @@ export default [
   "FillMicrophone",
   "FillOptions",
   "FillStorybook",
+  "FillVercel",
   "LineUser"
 ];
