@@ -1,6 +1,10 @@
 <template>
   <div class="c-docs-toolbar">
-    <a href="/ui/" class="c-btn c-btn--primary" target="_blank">
+    <a
+      href="https://superpeer-task-vue-storybook.vercel.app/"
+      class="c-btn c-btn--primary"
+      target="_blank"
+    >
       <span class="c-btn__label">Storybook</span>
     </a>
     <a
