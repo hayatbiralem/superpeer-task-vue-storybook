@@ -67,7 +67,7 @@ export default {
     BaseFormField
   },
   methods: {
-    toggleControll: index => {
+    toggleControll: function(index) {
       this.$refs["control-" + index][0].toggle();
     }
   },

@@ -4,7 +4,7 @@ import {
   decorations
 } from "../components/MetaList";
 
-import response from "../data/example-api-response.js";
+import response from "../data/example-api-response";
 
 export default {
   title: "Components/MetaList",
@@ -32,12 +32,12 @@ const Template = (args, { argTypes }) => ({
 });
 
 const defaultArgs = {
-  decoration: decoration[0],
+  decoration: decorations[0],
   layout: layouts[0],
   items: response.callDetails.metaItems
 };
 
-const getArgs = args => {
+const getArgs = (args) => {
   return Object.assign({}, defaultArgs, args);
 };
 
