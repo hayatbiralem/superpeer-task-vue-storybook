@@ -12,4 +12,4 @@ https://superpeer-task-vue-storybook.vercel.app/ui/
 
 ## CodeSandbox
 
-https://codesandbox.io/s/superpeer-task-vue-storybook-1mhxp
+https://codesandbox.io/s/superpeer-task-vue-storybook-0gv9p
