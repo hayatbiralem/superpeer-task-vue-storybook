@@ -2,10 +2,11 @@
   <div class="c-docs-toolbar">
     <a
       href="https://superpeer-task-vue-storybook.vercel.app/"
-      class="c-btn c-btn--primary"
+      class="c-btn c-btn--icon c-btn--primary c-btn--round"
       target="_blank"
+      title="Storybook"
     >
-      <span class="c-btn__label">Storybook</span>
+      <BaseIcon icon="fill-storybook" class="c-btn__icon" size="24" />
     </a>
     <a
       href="https://codesandbox.io/s/superpeer-task-vue-storybook-1mhxp"

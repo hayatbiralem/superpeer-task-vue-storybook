@@ -7,5 +7,6 @@ export default [
   "FillGithub",
   "FillMicrophone",
   "FillOptions",
+  "FillStorybook",
   "LineUser"
 ];

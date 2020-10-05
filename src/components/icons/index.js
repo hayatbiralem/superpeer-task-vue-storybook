@@ -6,4 +6,5 @@ export { default as FillCodesandbox } from "./FillCodesandbox";
 export { default as FillGithub } from "./FillGithub";
 export { default as FillMicrophone } from "./FillMicrophone";
 export { default as FillOptions } from "./FillOptions";
+export { default as FillStorybook } from "./FillStorybook";
 export { default as LineUser } from "./LineUser";
