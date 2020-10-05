@@ -1,29 +1,5 @@
 # superpeer-task-vue-storybook
 
-## Project setup
-```
-yarn install
-```
+### We have a UI component explorer powered by Storybook
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Run your unit tests
-```
-yarn test:unit
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Go to [Storybook UI Explorer &raquo;](#ui);
