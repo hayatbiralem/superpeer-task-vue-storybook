@@ -28,19 +28,23 @@ Components (without styles), stories, and styles have their own directories.
 ```
 src/
 ├── components/
+│   ├── fields/
+│   │   ├── BaseFormFieldButton.vue
+│   │   ├── BaseFormFieldSelect.vue
+│   │   └── BaseFormFieldText.vue
 │   ├── icons/
 │   │   ├── index.js
 │   │   ├── FillArrowDown.vue
 │   │   ⋮
 │   │   └── LineUser.vue
-│   ├── Button.vue
+│   ├── BaseButton.vue
 │   ⋮
-│   └── WaitingRoom.vue
+│   └── VideoPreview.vue
 ├── data/
 ├── stories/
-│   ├── 0--Introduction.stories.mdx
+│   ├── 01--Introduction.stories.mdx
 │   ⋮
-│   └── Button.stories.js
+│   └── 32--TheWaitingRoom.stories.js
 ├── styles/
 │   ├── components/
 │   │   ├── _components.buttons.scss
@@ -55,6 +59,7 @@ src/
 │   ├── _common.scss
 │   └── main.scss
 └── utils/
+    ├── pascalCase.js
     └── polyfills.js
 ```
 
