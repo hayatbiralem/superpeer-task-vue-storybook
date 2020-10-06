@@ -3,7 +3,6 @@
     <a
       href="https://superpeer-task-vue-storybook.vercel.app/"
       class="c-btn c-btn--icon c-btn--primary c-btn--round"
-      target="_blank"
       title="Vercel"
     >
       <BaseIcon icon="fill-vercel" class="c-btn__icon" size="24" />
@@ -11,7 +10,6 @@
     <a
       href="https://superpeer-task-vue-storybook.vercel.app/ui/"
       class="c-btn c-btn--icon c-btn--primary c-btn--round"
-      target="_blank"
       title="Storybook"
     >
       <BaseIcon icon="fill-storybook" class="c-btn__icon" size="24" />
@@ -19,7 +17,6 @@
     <a
       href="https://codesandbox.io/s/superpeer-task-vue-storybook-1mhxp"
       class="c-btn c-btn--icon c-btn--primary c-btn--round"
-      target="_blank"
       title="CodeSandbox"
     >
       <BaseIcon icon="fill-codesandbox" class="c-btn__icon" size="24" />
@@ -27,7 +24,6 @@
     <a
       href="https://github.com/hayatbiralem/superpeer-task-vue-storybook"
       class="c-btn c-btn--icon c-btn--primary c-btn--round"
-      target="_blank"
       title="Github"
     >
       <BaseIcon icon="fill-github" class="c-btn__icon" size="24" />
