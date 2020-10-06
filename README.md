@@ -6,7 +6,7 @@ This project tries to solve the task from Superpeer using Vue and Storybook.
 
 https://superpeer-task-vue-storybook.vercel.app
 
-## Storybook / UI Explorer
+## Storybook: UI Explorer
 
 https://superpeer-task-vue-storybook.vercel.app/ui/
 
