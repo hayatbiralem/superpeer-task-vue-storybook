@@ -116,7 +116,7 @@ SelectStateError.args = getArgs({
 
 export const SelectStateSuccess = Template.bind({});
 SelectStateSuccess.args = getArgs({
-  type: "text",
+  type: "select",
   state: "success"
 });
 
